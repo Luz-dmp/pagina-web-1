@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Sorpresa Final 🎁</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sorpresa-container">
+        <h1>🎉 ¡Sorpresa Especial! 🎉</h1>
+        <p>Haz clic en el botón para revelar tu mensaje secreto. ❤️</p>
+
+        <button class="boton-revelar" onclick="mostrarMensaje()">✨ Ver mensaje ✨</button>
+
+        <div id="mensajeSecreto" class="mensaje-secreto">
+            "Cada día contigo es un regalo. Gracias por hacer mi mundo más hermoso.  
+            Te amo con todo mi corazón. ❤️"
+        </div>
+
+        <a href="index.html" class="boton-volver">Volver al menú</a>
+    </div>
+
+    <!-- Lluvia de corazones -->
+    <div id="corazones"></div>
+
+    <script>
+        function mostrarMensaje() {
+            const mensaje = document.getElementById("mensajeSecreto");
+            mensaje.classList.add("mostrar");
+
+            // Iniciar la lluvia de corazones
+            setInterval(crearCorazon, 200);
+        }
+
+        function crearCorazon() {
+            const corazon = document.createElement("div");
+            corazon.classList.add("corazon");
+            corazon.innerHTML = "❤️";
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.getElementById("corazones").appendChild(corazon);
+
+            setTimeout(() => {
+                corazon.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

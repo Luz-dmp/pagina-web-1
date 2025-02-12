@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Interactivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-item" onclick="showSection(0)">
+            <div class="icono">❤️</div>
+            <div class="title">Nuestra Historia</div>
+        </div>
+        <div class="menu-item" onclick="showSection(1)">
+            <div class="icono">📷</div>
+            <div class="title">Galería de Recuerdos</div>
+        </div>
+        <div class="menu-item" onclick="showSection(2)">
+            <div class="icono">💌</div>
+            <div class="title">Cartas Digitales</div>
+        </div>
+        <div class="menu-item" onclick="showSection(3)">
+            <div class="icono">🎮</div>
+            <div class="title">Juego Interactivo</div>
+        </div>
+        <div class="menu-item" onclick="showSection(4)">
+            <div class="icono">🎁</div>
+            <div class="title">Sorpresa Final</div>
+        </div>
+    </div>
+
+    <div id="contentBox" class="content-box">
+        <span id="closeBtn" onclick="closeSection()">✖</span>
+        <h2 id="contentTitle"></h2>
+        <p id="contentText"></p>
+        <div id="extraContent"></div>
+    </div>
+
+    <script src="script.js"></script>
+    
+   
+
+</body>
+</html>

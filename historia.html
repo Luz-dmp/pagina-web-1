@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🌟 Nuestra Historia 🌟</h1>
+    
+    <div class="timeline">
+        <div class="event" onclick="mostrarMensaje(0)">
+            <div class="date">17 Ago 2023</div>
+            <div class="content">Nos conocimos</div>
+        </div>
+        <div class="event" onclick="mostrarMensaje(1)">
+            <div class="date">01 Oct 2023</div>
+            <div class="content">Primer regalo especial</div>
+        </div>
+        <div class="event" onclick="mostrarMensaje(2)">
+            <div class="date">14 Dic 2023</div>
+            <div class="content">Nuestra canción</div>
+        </div>
+        <div class="event" onclick="mostrarMensaje(3)">
+            <div class="date">14 Feb 2024</div>
+            <div class="content">San Valentín</div>
+        </div>
+    </div>
+
+    <!-- Contenedor para mostrar mensajes -->
+    <div id="mensajeBox" class="mensaje-box">
+        <span id="cerrarMensaje" onclick="cerrarMensaje()">✖</span>
+        <h2 id="tituloMensaje"></h2>
+        <p id="textoMensaje"></p>
+    </div>
+
+    <a href="index.html" class="boton-volver">Volver al menú</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mensajes = [
+                { titulo: "Nos conocimos", texto: "Ese día nuestras vidas cambiaron. Sin saberlo, en ese momento comenzó algo hermoso que jamás imaginé. 💜" },
+                { titulo: "Primer regalo especial", texto: "Fue más que un simple detalle, fue un pedacito de tu corazón para mi. 🎁✨" },
+                { titulo: "Nuestra canción", texto: "Esta canción se convirtió en nuestro himno. Cada vez que la escucho, me recuerda a ti y todo lo que hemos vivido. 🎶💖" },
+                { titulo: "San Valentín", texto: "Un día especial en el que celebramos lo que somos. No importa la distancia, nuestro amor lo supera todo. ❤️" }
+            ];
+
+            function mostrarMensaje(index) {
+                const mensajeBox = document.getElementById("mensajeBox");
+                document.getElementById("tituloMensaje").innerText = mensajes[index].titulo;
+                document.getElementById("textoMensaje").innerText = mensajes[index].texto;
+                mensajeBox.style.display = "block"; // Ahora sí se muestra correctamente
+            }
+
+            function cerrarMensaje() {
+                document.getElementById("mensajeBox").style.display = "none";
+            }
+
+            // Hacer las funciones accesibles globalmente
+            window.mostrarMensaje = mostrarMensaje;
+            window.cerrarMensaje = cerrarMensaje;
+        });
+    </script>
+</body>
+</html>
